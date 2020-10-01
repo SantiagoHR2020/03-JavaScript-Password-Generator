@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    
     <div class="wrapper">
       <header>
         <h1>Password Generator</h1>
@@ -17,6 +18,7 @@
           <h2>Generate a Password</h2>
         </div>
         <div class="card-body">
+          
           <textarea
             readonly
             id="password"
@@ -26,7 +28,12 @@
         </div>
         <form class="form">
           <label for="characterAmountNumber">Number of Characters</label>
-          <input type="number" min="8" max="128" value="8" id="characterAmountNumber">
+          <input type="range" min="8" max="128" value="8" id="characterAmountNumber" oninput="generatePassLength()" />
+          <span id="lengthDisplay">8</span>
+          <br>
+
+          <label for="lowercase">lowercase</label>
+          <input type="checkbox" id="lowercase">
 
           <label for="uppercase">Uppercase</label>
           <input type="checkbox" id="uppercase">
@@ -36,6 +43,8 @@
 
           <label for="symbols">Symbols</label>
           <input type="checkbox" id="symbols">
+
+          
         </form>
 
 
@@ -47,7 +56,7 @@
     
     <script src="script.js">
 
-  
+
     </script>
   </body>
 </html>

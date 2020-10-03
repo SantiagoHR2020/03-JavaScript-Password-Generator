@@ -1,6 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
 var characterAmountNumber = document.querySelector("#characterAmountNumber");
 var lowercase = document.querySelector("#lowercase");
 var uppercase = document.querySelector("#uppercase");
@@ -25,6 +24,8 @@ function writePassword() {
   passwordText.value = password;
 }
 
+// generates the base arrays for the password
+
 function arrayLowToHigh(low, high) {
   var array = [];
   for (let i = low; i <= high; i++) {
@@ -34,6 +35,8 @@ function arrayLowToHigh(low, high) {
   return array;
 }
 
+// retrieva length of password
+
 function generatePassLength() {
   var passLength = document.getElementById("characterAmountNumber").value;
   document.getElementById("lengthDisplay").innerHTML = passLength;
@@ -41,8 +44,9 @@ function generatePassLength() {
   return passLength;
 }
 
+// input validation
+
 function generateCharArray() {
-  console.log("hi");
   var charArray = [];
 
   if (characterAmountNumber.value >= 8 && characterAmountNumber.value <= 128) {
@@ -54,18 +58,15 @@ function generateCharArray() {
     ) {
       alert("Please select your criterion");
     } else {
-      console.log(lowercase.checked);
       if (lowercase.checked) {
         charArray = charArray.concat(lowerCaseCode);
       }
       if (numbers.checked) {
         charArray = charArray.concat(numberCaseCode);
       }
-      console.log(charArray);
       if (uppercase.checked) {
         charArray = charArray.concat(upperCaseCode);
       }
-      console.log(charArray);
       if (symbols.checked) {
         charArray = charArray.concat(symbolsCaseCode);
       }
@@ -77,23 +78,21 @@ function generateCharArray() {
   return charArray;
 }
 
+// generate password function
+
 function buildPassword() {
   var length = generatePassLength();
-  console.log(length);
   var passArray = generateCharArray();
-  console.log(passArray);
   var results = [];
 
   for (var i = 0; i < length; i++) {
     var index = Math.floor(Math.random() * passArray.length);
-    console.log(index);
     var digit = passArray[index];
     results.push(digit);
-    console.log(results);
   }
   return results.join("");
 }
 
-// Add event listener to generate button
+// event listener to generate button
 
 generateBtn.addEventListener("click", writePassword);

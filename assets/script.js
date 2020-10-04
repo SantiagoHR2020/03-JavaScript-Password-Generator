@@ -35,7 +35,7 @@ function arrayLowToHigh(low, high) {
   return array;
 }
 
-// retrieva length of password
+// retrieve length of password
 
 function generatePassLength() {
   var passLength = document.getElementById("characterAmountNumber").value;

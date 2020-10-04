@@ -18,4 +18,4 @@ HTML5, CSS, and JavaScript
 
 # Site Image
 
-![screenshot of about me page phone image](assets/images/Screenshots/screenshot1.PNG)
+![screenshot of Password generator](assets/images/schreenshot1.PNG)
